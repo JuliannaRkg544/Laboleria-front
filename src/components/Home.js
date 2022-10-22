@@ -7,7 +7,7 @@ import CakeInfo from "./CakeInfo";
 export default function Home() {
   const [cakeList, setCakelist] = useState([]);
   const [modal, setModal] = useState(false);
-  const [cake,setCake] = useState({})
+  const [cake,setCake] = useState({}) 
   useEffect(() => {
     axios
       .get(`${REACT_APP_URL}/cakes`)
