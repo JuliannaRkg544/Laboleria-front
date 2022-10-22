@@ -14,6 +14,13 @@ export default function CakeInfo({
   function toggleModal() {
     setModal(!modal);
   }
+  function finalizarPedido() {
+    let mensagem_wpp =
+      "Olá, gostaria de fazer o pedido:" + "\n" + `${name} `  +
+      "Total: R$ " + `${price*cont}` + ",00" 
+    window.open(
+      "https://wa.me/5522999279652?text=" + encodeURIComponent(mensagem_wpp)
+    );}
   return (
     <Modal
       isOpen={modal}
@@ -38,7 +45,7 @@ export default function CakeInfo({
         </div>
         <div className="button">
           {" "}
-          <button>Comprar</button>
+          <button onClick={()=>finalizarPedido()}  >Comprar</button>
         </div>
       </ModalStyle>
     </Modal>
@@ -59,6 +66,9 @@ const customStyles = {
     width: "600px",
     minHeight: "400px",
     display: "flex",
+  },
+  overlay:{
+    backgroundColor: "rgba(100, 100, 100, 0.3)"
   },
 };
 

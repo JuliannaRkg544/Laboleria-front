@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useContext } from "react";
 import logo from "../imgs/Laboleria.svg";
 import { Link } from "react-router-dom";
 
@@ -10,10 +9,7 @@ export default function Header() {
         <img src={logo} />
       <Link to={"/"} > <h1>LaBoleria</h1></Link> 
       </div>
-      <div className="left">
-       <Link to={"/signup"}><p>sigup</p> </Link>
-      <Link to={"/login"} >  <p>login</p></Link>
-      </div>
+     
     </Style>
   );
 }

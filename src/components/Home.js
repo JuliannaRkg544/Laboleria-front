@@ -10,7 +10,7 @@ export default function Home() {
   const [cake,setCake] = useState({})
   useEffect(() => {
     axios
-      .get("http://localhost:4000/cakes")
+      .get(`${REACT_APP_URL}/cakes`)
       .then((res) => {
         console.log(res.data);
         setCakelist(res.data);
