@@ -13,12 +13,12 @@ export default function SignUpCake() {
     event.preventDefault();
     const body = {
       name,
-      price,
+      price: Number(price),
       image,
       description,
     };
     axios
-      .post("http://127.0.0.1:4000/cakes", body)
+      .post(`${process.env.REACT_APP_URL}/cakes`, body)
       .then((response) => console.log(response.data))
       .catch((err) => console.log(err));
   }
