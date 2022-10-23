@@ -4,13 +4,14 @@ import styled from "styled-components";
 import Header from "./Header";
 import CakeInfo from "./CakeInfo";
 
+console.log(process.env)
 export default function Home() {
   const [cakeList, setCakelist] = useState([]);
   const [modal, setModal] = useState(false);
   const [cake,setCake] = useState({}) 
   useEffect(() => {
     axios
-      .get(`${REACT_APP_URL}/cakes`)
+      .get(`${process.env.REACT_APP_URL}/cakes`)
       .then((res) => {
         console.log(res.data);
         setCakelist(res.data);
